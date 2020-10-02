@@ -1,12 +1,12 @@
 ## Functional enrichment in given genes
 
-These are scripts to perform functional enrichment in input genes
+These are scripts to perform functional enrichment in input genes. `All files need to be sorted`
 
 #### For Pfam, InterPro, SMART etc use:
 
     ./_enrichmentTest.sh [list of test genes] [list of background genes] [gene annotation] [annotation names]
 
-all are sorted and one gene per line (the annotations should be combined to the same gene line)
+`all files are sorted` and one gene per line (the annotations should be combined to the same gene line)
 
 
 #### For KEGG pathways:
