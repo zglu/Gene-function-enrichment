@@ -38,7 +38,7 @@ join $1.mapped.counts.par1 $1.mapped.counts.par2 > $1.mapped.counts
 rm -f $1.mapped.counts.par1 $1.mapped.counts.par2
 
 ## construct the test table
-join $1.mapped.counts $2.mapped.counts | sed 's/-K\.txt//'| awk '{print $1 " " $2 " " $4 " " "'$TESTMAPPED'"-$2 " " "'$BKGDMAPPED'"-$4 " " $3}' | awk '$2>0'|sort | join $4 - > $1-fisherTable.txt
+join $1.mapped.counts $2.mapped.counts | sed 's/-K\.txt//'| awk '{print $1, $2, $4, "'$TESTMAPPED'"-$2, "'$BKGDMAPPED'"-$4, $3}' | awk '$2>0'|sort | join $4 - > $1-fisherTable.txt
 
 # run hypergeometric test
 Rscript _FisherTest.R $1
